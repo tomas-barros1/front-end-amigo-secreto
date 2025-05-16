@@ -11,6 +11,7 @@ import { GroupList } from "@/components/group-list"
 import { CreateGroupDialog } from "@/components/create-group-dialog"
 import { apiService } from "@/services/api-service"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { ThemeToggle } from "@/components/theme-toggle"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -81,9 +82,9 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-muted/30">
-      {/* Navbar simplificada mas elegante */}
-      <header className="bg-primary text-white py-3 shadow-md">
+    <div className="min-h-screen bg-background">
+      {/* Navbar em preto e branco */}
+      <header className="bg-primary text-primary-foreground py-3 shadow-md">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             {/* Logo e título */}
@@ -94,21 +95,26 @@ export default function DashboardPage() {
 
             {/* Menu do usuário */}
             <div className="flex items-center space-x-4">
+              {/* Botão de toggle de tema */}
+              <ThemeToggle />
+
               {/* Botões de navegação principais */}
-              <Link href="/dashboard/groups" className="p-2 rounded-full hover:bg-white/10" title="Meus Grupos">
+              <Link href="/dashboard/groups" className="p-2 rounded-full hover:bg-accent/10" title="Meus Grupos">
                 <UsersIcon className="h-5 w-5" />
               </Link>
 
-              <Link href="/dashboard/draws" className="p-2 rounded-full hover:bg-white/10" title="Meus Sorteios">
+              <Link href="/dashboard/draws" className="p-2 rounded-full hover:bg-accent/10" title="Meus Sorteios">
                 <GiftIcon className="h-5 w-5" />
               </Link>
 
               {/* Avatar e dropdown do usuário */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="relative h-10 w-10 rounded-full p-0 hover:bg-white/10">
-                    <Avatar className="h-9 w-9 border-2 border-white/20">
-                      <AvatarFallback className="bg-secondary text-white">{getUserInitials()}</AvatarFallback>
+                  <Button variant="ghost" className="relative h-10 w-10 rounded-full p-0 hover:bg-accent/10">
+                    <Avatar className="h-9 w-9 border-2 border-accent/20">
+                      <AvatarFallback className="bg-primary text-primary-foreground">
+                        {getUserInitials()}
+                      </AvatarFallback>
                     </Avatar>
                   </Button>
                 </DropdownMenuTrigger>
@@ -129,11 +135,13 @@ export default function DashboardPage() {
       <main className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
           <div>
-            <h2 className="text-3xl font-bold text-primary mb-1">Dashboard</h2>
-            {/* Nova cor para o texto - usando um tom mais escuro para melhor contraste */}
-            <p className="text-gray-700 text-lg">Acompanhe seus grupos e sorteios</p>
+            <h2 className="text-3xl font-bold mb-1">Dashboard</h2>
+            <p className="text-foreground/80 text-lg">Acompanhe seus grupos e sorteios</p>
           </div>
-          <Button onClick={() => setIsCreateGroupOpen(true)} className="bg-primary hover:bg-primary/90">
+          <Button
+            onClick={() => setIsCreateGroupOpen(true)}
+            className="bg-primary text-primary-foreground hover:bg-primary/90"
+          >
             <PlusIcon className="h-4 w-4 mr-2" />
             Criar Grupo
           </Button>
@@ -156,7 +164,7 @@ export default function DashboardPage() {
               </div>
             </CardContent>
             <CardFooter>
-              <Button variant="outline" className="w-full" asChild>
+              <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary/5" asChild>
                 <Link href="/dashboard/groups">Gerenciar Grupos</Link>
               </Button>
             </CardFooter>
@@ -176,7 +184,7 @@ export default function DashboardPage() {
               </div>
             </CardContent>
             <CardFooter>
-              <Button variant="outline" className="w-full" asChild>
+              <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary/5" asChild>
                 <Link href="/dashboard/draws">Gerenciar Sorteios</Link>
               </Button>
             </CardFooter>
@@ -185,8 +193,8 @@ export default function DashboardPage() {
 
         <div className="mt-8">
           <div className="flex justify-between items-center mb-4">
-            <h3 className="text-xl font-bold text-primary">Grupos Recentes</h3>
-            <Button variant="ghost" size="sm" asChild className="text-primary hover:text-primary/80">
+            <h3 className="text-xl font-bold">Grupos Recentes</h3>
+            <Button variant="ghost" size="sm" asChild className="text-foreground hover:bg-primary/5">
               <Link href="/dashboard/groups">Ver todos</Link>
             </Button>
           </div>

@@ -91,17 +91,17 @@ export function GroupList() {
               <CardContent>
                 <div className="flex justify-between items-center mb-4">
                   <div className="flex items-center">
-                    <UsersIcon className="h-5 w-5 mr-2 text-muted-foreground" />
+                    <UsersIcon className="h-5 w-5 mr-2 text-foreground/70" />
                     <span>{group.participants.length} membros</span>
                   </div>
                   <div className="flex items-center">
-                    <GiftIcon className="h-5 w-5 mr-2 text-muted-foreground" />
+                    <GiftIcon className="h-5 w-5 mr-2 text-foreground/70" />
                     <span>{group.alreadyDrawn ? "Sorteado" : "Não sorteado"}</span>
                   </div>
                 </div>
                 <div className="space-y-2">
                   <h4 className="text-sm font-medium">Participantes:</h4>
-                  <ul className="text-sm text-muted-foreground">
+                  <ul className="text-sm text-foreground/70">
                     {group.participants.slice(0, 3).map((participant) => (
                       <li key={participant.id}>{participant.username}</li>
                     ))}
@@ -148,17 +148,17 @@ export function GroupList() {
           <CardContent>
             <div className="flex justify-between items-center mb-4">
               <div className="flex items-center">
-                <UsersIcon className="h-5 w-5 mr-2 text-muted-foreground" />
+                <UsersIcon className="h-5 w-5 mr-2 text-foreground/70" />
                 <span>{group.participants.length} membros</span>
               </div>
               <div className="flex items-center">
-                <GiftIcon className="h-5 w-5 mr-2 text-muted-foreground" />
+                <GiftIcon className="h-5 w-5 mr-2 text-foreground/70" />
                 <span>{group.alreadyDrawn ? "Sorteado" : "Não sorteado"}</span>
               </div>
             </div>
             <div className="space-y-2">
               <h4 className="text-sm font-medium">Participantes:</h4>
-              <ul className="text-sm text-muted-foreground">
+              <ul className="text-sm text-foreground/70">
                 {group.participants.slice(0, 3).map((participant) => (
                   <li key={participant.id}>{participant.username}</li>
                 ))}

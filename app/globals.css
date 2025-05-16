@@ -2,75 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --primary: 115, 22, 30;
-  --secondary: 10, 30, 38;
-  --background: 240, 242, 242;
-  --foreground: 10, 30, 38;
-  --muted: 215, 217, 217;
-  --accent: 140, 105, 97;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary: 115, 22, 30;
-    --secondary: 10, 30, 38;
-    --background: 10, 30, 38;
-    --foreground: 240, 242, 242;
-    --muted: 140, 105, 97;
-    --accent: 215, 217, 217;
-  }
-}
-
-body {
-  color: rgb(var(--foreground));
-  background: rgb(var(--background));
-}
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 115 22 30;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 10 30 38;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 140 105 97;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 115 22 30;
+    /* Tema claro - estritamente preto e branco */
+    --background: 0 0% 100%; /* Branco puro */
+    --foreground: 0 0% 0%; /* Preto puro */
+
+    --card: 0 0% 100%; /* Branco puro */
+    --card-foreground: 0 0% 0%; /* Preto puro */
+
+    --popover: 0 0% 100%; /* Branco puro */
+    --popover-foreground: 0 0% 0%; /* Preto puro */
+
+    --primary: 0 0% 0%; /* Preto puro */
+    --primary-foreground: 0 0% 100%; /* Branco puro */
+
+    --secondary: 0 0% 95%; /* Quase branco */
+    --secondary-foreground: 0 0% 0%; /* Preto puro */
+
+    --muted: 0 0% 95%; /* Quase branco */
+    --muted-foreground: 0 0% 25%; /* Cinza mais escuro para melhor contraste */
+
+    --accent: 0 0% 95%; /* Quase branco */
+    --accent-foreground: 0 0% 0%; /* Preto puro */
+
+    --destructive: 0 100% 50%; /* Vermelho puro */
+    --destructive-foreground: 0 0% 100%; /* Branco puro */
+
+    --border: 0 0% 85%; /* Cinza claro para melhor contraste */
+    --input: 0 0% 85%; /* Cinza claro para melhor contraste */
+    --ring: 0 0% 0%; /* Preto puro */
+
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 10 30 38;
-    --foreground: 240 242 242;
-    --card: 10 30 38;
-    --card-foreground: 240 242 242;
-    --popover: 10 30 38;
-    --popover-foreground: 240 242 242;
-    --primary: 115 22 30;
-    --primary-foreground: 240 242 242;
-    --secondary: 140 105 97;
-    --secondary-foreground: 240 242 242;
-    --muted: 140 105 97;
-    --muted-foreground: 215 217 217;
-    --accent: 215 217 217;
-    --accent-foreground: 10 30 38;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 240 242 242;
-    --border: 140 105 97;
-    --input: 140 105 97;
-    --ring: 115 22 30;
+    /* Tema escuro - estritamente preto e branco */
+    --background: 0 0% 0%; /* Preto puro */
+    --foreground: 0 0% 100%; /* Branco puro */
+
+    --card: 0 0% 5%; /* Quase preto */
+    --card-foreground: 0 0% 100%; /* Branco puro */
+
+    --popover: 0 0% 5%; /* Quase preto */
+    --popover-foreground: 0 0% 100%; /* Branco puro */
+
+    --primary: 0 0% 100%; /* Branco puro */
+    --primary-foreground: 0 0% 0%; /* Preto puro */
+
+    --secondary: 0 0% 15%; /* Quase preto */
+    --secondary-foreground: 0 0% 100%; /* Branco puro */
+
+    --muted: 0 0% 15%; /* Quase preto */
+    --muted-foreground: 0 0% 80%; /* Cinza mais claro para melhor contraste */
+
+    --accent: 0 0% 15%; /* Quase preto */
+    --accent-foreground: 0 0% 100%; /* Branco puro */
+
+    --destructive: 0 100% 50%; /* Vermelho puro */
+    --destructive-foreground: 0 0% 100%; /* Branco puro */
+
+    --border: 0 0% 30%; /* Cinza mais claro para melhor contraste */
+    --input: 0 0% 30%; /* Cinza mais claro para melhor contraste */
+    --ring: 0 0% 100%; /* Branco puro */
   }
 }
 
